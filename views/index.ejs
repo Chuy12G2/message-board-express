@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <a href="/new"><button>Add Message</button></a>
+    <p>Welcome to <%= title %>, here is the latest:</p>
+    <ul>
+      <% messages.map(function(message) { %>
+        <div>
+          <div>
+            <p><strong><%= message.user %></strong></p>
+            <p><em>(<%= message.added %>)</em></p>
+          </div>
+          <p>
+            <%= message.text %>
+          </p>
+        </div>
+      <% }); %>
+    </ul>
+  </body>
+</html>
